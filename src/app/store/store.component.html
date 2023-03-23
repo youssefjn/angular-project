@@ -1,75 +1,86 @@
-<nav class="navbar navbar-expand-lg navbar-dark " style="background-color: black;position: fixed;width: 215vh;z-index: 1;">
-    <div class="container">
-      <a class="navbar-brand" href="#">Home</a>
-    
-      
-       
-       
-        <button type="button" class="btn btn-secondary position-relative " data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-          <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-            {{cart.length}}
-          </span>
-          </button>
-    </div>
-    </nav>
-    <!--Mini Cart-->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-    <div class="offcanvas-header">
-      <h5 id="offcanvasRightLabel">Mini Cart</h5>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-      <ul class="list-group" *ngFor="let c of cart">
-        <li class="list-group-item"><img width="30" class="img-fluid me-1" src={{c.image}} >{{c.name}}<i class="bi bi-x-circle-fill float-end"></i></li>
-        </ul>
-        <button type="button" class="btn btn-primary mt-2 float-end" (click)="checkout()">Checkout</button>
-        <h5>{{getTotalPrice()}} TND</h5>
-    </div>
-    </div>
-    <!--Mini Cart-->
-    <div class="container-fluid" style="background-color: rgb(0, 0, 0);">
-    <div class="container d-lg-flex justify-content-between align-items-center ps-lg-4">
-      <div class="pb-lg-5 mb-lg-5 text-center text-lg-start text-lg-nowrap fw-bold">
-        <h3 class="h2 text-light fw-bold pb-1 from-start">Has just arrived!</h3>
-        <h2 class="text-light fw-bold display-5 from-start delay-1">Huge Summer Collection</h2>
-        <p class="fs-lg text-light pb-3 from-start delay-2">Earpods,Keyboards,SmartWatchs &amp; much more...</p>
-        <div class="d-table scale-up delay-4 mx-auto mx-lg-0"><a class="button-57" href="/store#products" role="button"><span class="text">Shop Now</span><span>Hurry Up!</span></a>
-        </div>
+<nav class="navbar navbar-expand-lg navbar-dark "
+  style="background-color: black;position: fixed;width: 215vh;z-index: 1;">
+  <div class="container">
+    <a class="navbar-brand" href="#">Home</a>
+
+
+
+
+    <button type="button" class="btn btn-secondary position-relative " data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+      <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+        {{cart.length}}
+      </span>
+    </button>
+  </div>
+</nav>
+<!--Mini Cart-->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 id="offcanvasRightLabel">Mini Cart</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="list-group" *ngFor="let c of cart">
+      <li class="list-group-item"><img width="30" class="img-fluid me-1" src={{c.image}}>{{c.name}}<i
+          class="bi bi-x-circle-fill float-end"></i></li>
+    </ul>
+    <button type="button" class="btn btn-primary mt-2 float-end" (click)="checkout()">Checkout</button>
+    <h5>{{getTotalPrice()}} TND</h5>
+  </div>
+</div>
+<!--Mini Cart-->
+<div class="container-fluid" style="background-color: rgb(0, 0, 0);">
+  <div class="container d-lg-flex justify-content-between align-items-center ps-lg-4">
+    <div class="pb-lg-5 mb-lg-5 text-center text-lg-start text-lg-nowrap fw-bold">
+      <h3 class="h2 text-light fw-bold pb-1 from-start">Has just arrived!</h3>
+      <h2 class="text-light fw-bold display-5 from-start delay-1">Huge Summer Collection</h2>
+      <p class="fs-lg text-light pb-3 from-start delay-2">Earpods,Keyboards,SmartWatchs &amp; much more...</p>
+      <div class="d-table scale-up delay-4 mx-auto mx-lg-0"><a class="button-57" href="/store#products"
+          role="button"><span class="text">Shop Now</span><span>Hurry Up!</span></a>
       </div>
-      
-      <img class="img-fluid" src="https://www.pcspecialist.co.uk/images/landing/pcs/gaming-pc-bundles/bundles-visual.jpg"><br>  </div>
     </div>
-    <section id="products">
-    <div class="container mt-5">
+
+    <img class="img-fluid"
+      src="https://www.pcspecialist.co.uk/images/landing/pcs/gaming-pc-bundles/bundles-visual.jpg"><br>
+  </div>
+</div>
+<section id="products">
+  <div class="container mt-5">
     <h3>Latest Products</h3>
     <div class="row">
       <div class="card col-lg-4 col-md-6" *ngFor="let product of products">
         <img src={{product.image}} class="card-img-top center" alt="...">
         <div class="card-body">
-        <h5 class="card-title"><b>{{product.name}}</b> <br> </h5>
-        <p class="card-text">{{product.description}} </p>
+          <h5 class="card-title"><b>{{product.name}}</b> <br> </h5>
+          <p class="card-text">{{product.description}} </p>
           <h2 class="card-text">{{product.price}} TND</h2>
-        <button class="button-48" role="button"><span class="text" (click)="orderP(product)">Buy Now !</span></button>
+          <button class="button-48" role="button"><span class="text" (click)="orderP(product)">Buy Now !</span></button>
         </div>
       </div>
 
-      </div>
-    
-    </div></section>
-    <div class="container-fluid mt-5" style="background-color: rgb(0, 0, 0);">
-    <div class="container d-lg-flex justify-content-between align-items-center ps-lg-4">
-      <div class="pb-lg-5 mb-lg-5 text-center text-lg-start text-lg-nowrap fw-bold">
-        <h3 class="h2 text-light fw-bold pb-1 from-start">Hurry up! Limited time offer.</h3>
-        <h2 class="text-light fw-bold display-5 from-start delay-1">Best Accessories</h2>
-        <div class="d-table scale-up delay-4 mx-auto mx-lg-0"><a class="button-55" href="/store#products">Shop Now<i class="ci-arrow-right ms-2 me-n1"></i></a></div>
-      </div>
-      
-      <img class="img-fluid" src="https://www.apple.com/newsroom/images/tile-images/Apple_airpods-pro_new-design-102819.jpg.landing-big_2x.jpg" style="width:30rem ;"><br>  </div>
     </div>
-    <div class="container-fluid p-3" style="background-color: black;">
-      <div class="container">
-        <div class="fs-xs text-light opacity-50 text-center text-md-start">© All rights reserved. Made by <a class="text-light">Youssef jn</a></div>
-      </div>
+
+  </div>
+</section>
+<div class="container-fluid mt-5" style="background-color: rgb(0, 0, 0);">
+  <div class="container d-lg-flex justify-content-between align-items-center ps-lg-4">
+    <div class="pb-lg-5 mb-lg-5 text-center text-lg-start text-lg-nowrap fw-bold">
+      <h3 class="h2 text-light fw-bold pb-1 from-start">Hurry up! Limited time offer.</h3>
+      <h2 class="text-light fw-bold display-5 from-start delay-1">Best Accessories</h2>
+      <div class="d-table scale-up delay-4 mx-auto mx-lg-0"><a class="button-55" href="/store#products">Shop Now<i
+            class="ci-arrow-right ms-2 me-n1"></i></a></div>
     </div>
-    
+
+    <img class="img-fluid"
+      src="https://www.apple.com/newsroom/images/tile-images/Apple_airpods-pro_new-design-102819.jpg.landing-big_2x.jpg"
+      style="width:30rem ;"><br>
+  </div>
+</div>
+<div class="container-fluid p-3" style="background-color: black;">
+  <div class="container">
+    <div class="fs-xs text-light opacity-50 text-center text-md-start">© All rights reserved. Made by <a
+        class="text-light">Youssef jn</a></div>
+  </div>
+</div>

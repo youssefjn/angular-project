@@ -8,7 +8,7 @@ export class WeatherService {
   apiUrlcurrent = "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=";
   apiUrlfuture = "https://api.openweathermap.org/data/2.5/forecast?&units=metric&q=";
   apiKey = "beb34f247bea6bbb83cf83f1acf6cd3d";
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   currentWeather(ville: string): Observable<any> {
     return this.http.get<any>(

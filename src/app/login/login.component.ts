@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
     username: null,
     email: null,
     address: null,
-    phoneNumber : null
+    phoneNumber: null
   };
   isSuccessful = false;
   isSignUpFailed = false;
@@ -32,7 +32,8 @@ export class LoginComponent implements OnInit {
     throw new Error('Method not implemented.');
   }
 
-  onSubmit(f :NgForm): void {
+  onSubmit(f: NgForm): void {
     alert('Your order has been submitted');
     window.location.href = 'http://localhost:4200/store';
-}}
+  }
+}

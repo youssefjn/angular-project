@@ -1,14 +1,14 @@
-
 .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    float: left;
-    width:  20rem;
-    height: 20rem;
-    object-fit: cover;
-    
-  }
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  float: left;
+  width: 20rem;
+  height: 20rem;
+  object-fit: cover;
+
+}
+
 .button-48 {
   appearance: none;
   background-color: #FFFFFF;
@@ -17,7 +17,7 @@
   color: #000000;
   cursor: pointer;
   display: inline-block;
-  font-family: Clarkson,Helvetica,sans-serif;
+  font-family: Clarkson, Helvetica, sans-serif;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0;
@@ -31,7 +31,7 @@
   text-decoration: none;
   text-rendering: geometricprecision;
   text-transform: uppercase;
-  transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 100ms cubic-bezier(.694, 0, 0.335, 1);
+  transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1), background-color 100ms cubic-bezier(.694, 0, 0.335, 1), color 100ms cubic-bezier(.694, 0, 0.335, 1);
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
@@ -169,4 +169,3 @@
   height: 14px;
   line-height: 13px;
 }
-

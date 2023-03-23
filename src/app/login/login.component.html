@@ -10,10 +10,12 @@
                     <div class="row">
                         <div class="col-lg-10 col-xl-7 mx-auto">
                             <h3 class="display-4">Checkout</h3>
-                            <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit(f)" #f="ngForm" novalidate>
+                            <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit(f)" #f="ngForm"
+                                novalidate>
                                 <div class="form-group" style="margin: 1em;">
-                                    <input type="text" class="form-control"placeholder="name" aria-label="name" name="name" [(ngModel)]="form.name" required
-                                        minlength="2" maxlength="30" #name="ngModel" />
+                                    <input type="text" class="form-control" placeholder="name" aria-label="name"
+                                        name="name" [(ngModel)]="form.name" required minlength="2" maxlength="30"
+                                        #name="ngModel" />
                                     <div class="alert-danger" *ngIf="name.errors && f.submitted">
                                         <div *ngIf="name.errors['required']">name is required</div>
                                         <div *ngIf="name.errors['minlength']">
@@ -25,8 +27,8 @@
                                     </div>
                                 </div>
                                 <div class="form-group" style="margin: 1em;">
-                                    <input type="email" class="form-control" name="email"placeholder="Email" aria-label="Email" [(ngModel)]="form.email" required email
-                                        #email="ngModel" />
+                                    <input type="email" class="form-control" name="email" placeholder="Email"
+                                        aria-label="Email" [(ngModel)]="form.email" required email #email="ngModel" />
                                     <div class="alert-danger" *ngIf="email.errors && f.submitted">
                                         <div *ngIf="email.errors['required']">Email is required</div>
                                         <div *ngIf="email.errors['email']">
@@ -35,8 +37,9 @@
                                     </div>
                                 </div>
                                 <div class="form-group" style="margin: 1em;">
-                                    <input type="text" class="form-control"placeholder="address" aria-label="address" name="address" [(ngModel)]="form.address" required
-                                        minlength="6" #address="ngModel" />
+                                    <input type="text" class="form-control" placeholder="address" aria-label="address"
+                                        name="address" [(ngModel)]="form.address" required minlength="6"
+                                        #address="ngModel" />
                                     <div class="alert-danger" *ngIf="address.errors && f.submitted">
                                         <div *ngIf="address.errors['required']">address is required</div>
                                         <div *ngIf="address.errors['minlength']">
@@ -45,22 +48,23 @@
                                     </div>
                                 </div>
                                 <div class="form-group" style="margin: 1em;">
-                                    <input type="number" class="form-control"placeholder="phone Number" aria-label="phoneNumber" name="phoneNumber" [(ngModel)]="form.phoneNumber" required
-                                        minlength="8" maxlength="8" #phoneNumber="ngModel" />
+                                    <input type="number" class="form-control" placeholder="phone Number"
+                                        aria-label="phoneNumber" name="phoneNumber" [(ngModel)]="form.phoneNumber"
+                                        required minlength="8" maxlength="8" #phoneNumber="ngModel" />
                                     <div class="alert-danger" *ngIf="phoneNumber.errors && f.submitted">
                                         <div *ngIf="phoneNumber.errors['required']">phone Number is required</div>
                                         <div *ngIf="phoneNumber.errors['minlength']">
-                                            number must be at  8 chiffres
+                                            number must be at 8 chiffres
                                         </div>
-                                      
+
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <button class="btn btn-success">Checkout</button>
                                 </div>
-                    
-                               
+
+
                             </form>
                         </div>
                     </div>
