@@ -1,1 +1,104 @@
-<p>weather works!</p>
+<a class=" btn btn-secondary btn-lg" style="position: absolute;" href="/home"> go Back</a>
+<body>
+<div class="search">
+
+    <input type="text"  [(ngModel)]="city" placeholder="Search City">
+    <div class="card-footer d-flex justify-content-between">
+      <button class="button-29" (click)="getCurrentWeather()">
+        Current weather
+      </button>
+      <button class="button-29" (click)="getFiveDaysWearther()">
+         5 Days forecast
+      </button>
+    </div>
+
+</div>
+  <div class="container" *ngIf="current">
+  <div class="upper-data">
+    <img src="../../assets/hot.jpg" alt="hot" *ngIf="current.main.temp >10" >
+    <img src="../../assets/cold.png" alt="cold" *ngIf="current.main.temp <10" > 
+    <div class="weather-data">
+      <div class="location">{{ current.name }}, {{ current.sys.country }} <br> {{ meteoCurrentDate| date:'EEEE, d, MMMM , y' }}</div>
+      <div class="temperature">{{ current.main.temp | number:'1.0-0'}}°C</div>
+    </div>
+   </div>
+
+    <div class="lower-data">
+<div class="more-info-label">
+  More Informations
+</div>
+<div class="more-info-container">
+  <div class="info-block">
+  <div class="info-block-label">
+    <img src="https://cdn-icons-png.flaticon.com/512/2322/2322701.png" alt="">
+    <span>Min</span>
+  </div>
+  <div class="info-block-value">
+    {{ current.main.temp_min| number:'1.0-0' }}°C
+  </div>
+</div>
+<div class="info-block">
+  <div class="info-block-label">
+    <img src="https://cdn-icons-png.flaticon.com/512/1684/1684375.png" alt="">
+    <span>Max</span>
+  </div>
+  <div class="info-block-value">
+    {{ current.main.temp_max| number:'1.0-0' }}°C
+  </div>
+</div>  
+<div class="info-block">
+  <div class="info-block-label">
+    <img src="https://cdn-icons-png.flaticon.com/512/8923/8923690.png" alt="">
+    <span>Humidity</span>
+  </div>
+  <div class="info-block-value">
+    {{ current.main.humidity }}%
+  </div>
+</div>
+<div class="info-block">
+  <div class="info-block-label">
+    <img src="https://cdn-icons-png.flaticon.com/512/9369/9369776.png" alt="">
+    <span>Pressure</span>
+  </div>
+  <div class="info-block-value">
+    {{current.main.pressure}} mb
+  </div>
+</div></div>
+    </div>
+</div>
+    <div class="container-max" *ngIf="forecast && weather.length>1">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th></th>
+            <th>Temperature</th>
+            <th>Min</th>
+            <th>Max</th>
+            <th>Humidity</th>
+            <th>Pressure</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let weather of weather">
+          <tr>
+            <td>{{ weather.dt_txt | date:'EEEE, d, MMMM , y, h:mm' }}</td>
+            <td>
+              <img
+                src="http://openweathermap.org/img/w/{{
+                  weather.weather[0].icon
+                }}.png"
+                style="width: 30px; height: 30px"
+                class="img-fluid"
+              />
+            </td>
+            <td style="text-align: center;">{{ weather.main.temp| number:'1.0-0' }}°C</td>
+            <td style="text-align: center;">{{ weather.main.temp_min| number:'1.0-0' }}°C</td>
+            <td style="text-align: center;">{{ weather.main.temp_max| number:'1.0-0' }}°C</td>
+            <td style="text-align: center;">{{ weather.main.humidity }}%</td>
+            <td style="text-align: center;">{{ weather.main.pressure }}mb</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+</body>
