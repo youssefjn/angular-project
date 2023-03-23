@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "OneOdio Casque Audio Filaire avec Micro - Port de Partage",
+        "description": "Gamme de produits: Casque OneOdio PRO 10L Modèle: OneOdio PRO 10L Taille (Longueur x Largeur x Hauteur cm): 1.2 mPoids (kg): 290Couleur: BLEU L",
+        "price": 149.00,
+        "image": "https://therichpost.com/testjsonapi/wp-content/themes/testjsonapi/assets/images/items/8.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Ip67 étanche 1. Écran 71 pouces IWO Smartwatch 7",
+        "description": "Écran couleur clair à voir même au soleil, Informations sportives à tout moment, IP67 imperméable, vous pouvez vous laver les mains lorsque vous le portez ou sous la pluie et même pour nager",
+        "price": 64.90,
+        "image": "https://therichpost.com/testjsonapi/wp-content/themes/testjsonapi/assets/images/items/7.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Souris gamer USB Led 5500 DPI Optique",
+        "description": "Certification: CE, ROHS ,Méthode de Traçage : Optique, Type d'interface: USB, Nombre de boutons: 7, DPI: 5500, 1000-1600-2400-3200-5500DPI,  Modèle: 7D,Longueur du  Câble: 1.35M",
+        "price": 20.90,
+        "image": "https://m.media-amazon.com/images/I/71BxFppBoQL.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Inkax Ecouteur Sans fils - T03 - Blanc",
+        "description": "Compatible avec Android, ios et pc,Se positionnent parfaitement dans votre oreille 3 heures sans recharge. En mode veille jusqu’à 60 heures Distance de fonctionnement 10 m Touche tactile",
+        "price": 59.90,
+        "image": "https://tn.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/91/6396/1.jpg?8548"
+    },
+    {
+        "id": 5,
+        "name": "LED Backlight - Gaming Keyboard - Noir",
+        "description": "Durée de vie: 8millions de fois,Le nouveau ABS matériau plastique dropanti-violence ,180cm de longueur ,Conception résistante à l'eau,Le clavier a un rétroéclairage LED ,QWERTYkeyboard - résistantes à l'eau et une meilleure durabilité.",
+        "price": 39.00,
+        "image": "https://tn.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/27/602/3.jpg?0901"
+    },
+    {
+        "id": 6,
+        "name": "XIAOMI Mi Redmi - Power Bank 20000 MAh - Charge rapide - 18W",
+        "description": "Modèle : Xiaomi Redmi Power Bank 20000 mAh Capacité de la batterie : 20000 mAh Connecteur d'entrée : Micro-USB Connecteurs de sortie 1 x Micro-USB",
+        "price": 99.00,
+        "image": "https://tn.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/61/2827/1.jpg?7191"
+    }
+]
