@@ -9,26 +9,58 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-10 col-xl-7 mx-auto">
-                            <h3 class="display-4">Login</h3>
-                            <p class="text-muted mb-4">Therichpost.com</p>
-                            <form >
-                                <div class="form-group mb-3">
-                                    <input id="inputEmail" type="email" formControlName="email"  [ngClass]="{ 'is-invalid': submitted && f.email.errors }" placeholder="Email address" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
-                                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                                        <div *ngIf="f.email.errors.required">Email is required</div>
-                                        <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
-                                     </div>
+                            <h3 class="display-4">Checkout</h3>
+                            <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit(f)" #f="ngForm" novalidate>
+                                <div class="form-group" style="margin: 1em;">
+                                    <input type="text" class="form-control"placeholder="name" aria-label="name" name="name" [(ngModel)]="form.name" required
+                                        minlength="2" maxlength="30" #name="ngModel" />
+                                    <div class="alert-danger" *ngIf="name.errors && f.submitted">
+                                        <div *ngIf="name.errors['required']">name is required</div>
+                                        <div *ngIf="name.errors['minlength']">
+                                            name must be at least 2 characters
+                                        </div>
+                                        <div *ngIf="name.errors['maxlength']">
+                                            name must be at most 30 characters
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-group mb-3">
-                                    <input id="inputPassword" type="password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="Password" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary">
-                                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                                        <div *ngIf="f.password.errors.required">Password is required</div>
-                                     </div>
+                                <div class="form-group" style="margin: 1em;">
+                                    <input type="email" class="form-control" name="email"placeholder="Email" aria-label="Email" [(ngModel)]="form.email" required email
+                                        #email="ngModel" />
+                                    <div class="alert-danger" *ngIf="email.errors && f.submitted">
+                                        <div *ngIf="email.errors['required']">Email is required</div>
+                                        <div *ngIf="email.errors['email']">
+                                            Email must be a valid email address
+                                        </div>
+                                    </div>
                                 </div>
+                                <div class="form-group" style="margin: 1em;">
+                                    <input type="text" class="form-control"placeholder="address" aria-label="address" name="address" [(ngModel)]="form.address" required
+                                        minlength="6" #address="ngModel" />
+                                    <div class="alert-danger" *ngIf="address.errors && f.submitted">
+                                        <div *ngIf="address.errors['required']">address is required</div>
+                                        <div *ngIf="address.errors['minlength']">
+                                            address must be at least 4 characters
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group" style="margin: 1em;">
+                                    <input type="number" class="form-control"placeholder="phone Number" aria-label="phoneNumber" name="phoneNumber" [(ngModel)]="form.phoneNumber" required
+                                        minlength="8" maxlength="8" #phoneNumber="ngModel" />
+                                    <div class="alert-danger" *ngIf="phoneNumber.errors && f.submitted">
+                                        <div *ngIf="phoneNumber.errors['required']">phone Number is required</div>
+                                        <div *ngIf="phoneNumber.errors['minlength']">
+                                            number must be at  8 chiffres
+                                        </div>
+                                      
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <button class="btn btn-success">Checkout</button>
+                                </div>
+                    
                                
-                                <button type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Login</button>
-                                <div class="text-center d-flex justify-content-between mt-4"><p>Code by <a href="https://therichpost.com/" class="font-italic text-muted"> 
-                                        <u>Jassa</u></a></p></div>
                             </form>
                         </div>
                     </div>

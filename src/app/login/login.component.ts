@@ -1,5 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -7,38 +8,31 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  constructor(private formBuilder: FormBuilder) { }
-  //Form Validables 
-  registerForm:any =  FormGroup;
-  submitted = false;
-  //Add user form actions
-  get f() { return this.registerForm.controls; }
-  onSubmit() {
-    
-    this.submitted = true;
-    // stop here if form is invalid
-    if (this.registerForm.invalid) {
-        return;
-    }
-    //True if all the fields are filled
-    if(this.submitted)
-    {
-      //alert("Great!!");
-      // Initialize Params Object
-      var myFormData = new FormData();
-      // Begin assigning parameters
-      myFormData.append('myemail', this.registerForm.value.email);
-      myFormData.append('mypassword', this.registerForm.value.password);
-    }
-  
-  }
-    //login form
-  ngOnInit(): void {
-    //login form
-   //Add User form validations
-   this.registerForm = this.formBuilder.group({
-    email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required]],
+  form: any = {
+    username: null,
+    email: null,
+    address: null,
+    phoneNumber : null
+  };
+  isSuccessful = false;
+  isSignUpFailed = false;
+  errorMessage = '';
+
+  checkoutForm: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) {
+    this.checkoutForm = this.formBuilder.group({
+      username: '',
+      email: '',
+      address: '',
+      roles: ''
     });
   }
-}
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
+
+  onSubmit(f :NgForm): void {
+    alert('Your order has been submitted');
+    window.location.href = 'http://localhost:4200/store';
+}}
